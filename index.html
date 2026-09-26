@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#10131f">
+	<title>Emoji Tiles</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="game-shell">
+		<section class="landing-screen" id="landing-screen" aria-label="Inicio de Emoji Tiles">
+			<div class="landing-orbit orbit-one"></div><div class="landing-orbit orbit-two"></div>
+			<div class="landing-note note-one">✨</div><div class="landing-note note-two">🎵</div><div class="landing-note note-three">💫</div>
+			<div class="landing-content">
+				<div class="landing-mark">🎹</div>
+				<p class="landing-kicker">RITMO · PRECISIÓN · DIVERSIÓN</p>
+				<h1 class="landing-title">emoji<span>tiles</span></h1>
+				<p class="landing-subtitle">Sigue el ritmo. Toca las notas. No dejes caer ninguna.</p>
+				<button class="primary-button landing-button" id="enter-game-button" type="button">Iniciar Juego <span>→</span></button>
+				<p class="landing-hint">Usa Z · X · , · . o toca cada carril</p>
+			</div>
+			<div class="landing-footer"><span>EMOJI TILES</span><span>EDICIÓN 01</span></div>
+		</section>
+
+		<section class="game-screen is-hidden" id="game-screen" aria-label="Juego Emoji Tiles">
+		<header class="topbar">
+			<a class="brand" href="#" id="home-button" aria-label="Volver al inicio">
+				<span class="brand-mark">🎹</span>
+				<span>emoji<span>tiles</span></span>
+			</a>
+			<span class="active-song-title" id="active-song-title">Selecciona una canción</span>
+			<div class="top-actions">
+				<button class="icon-button" id="settings-button" type="button" aria-label="Abrir configuración" title="Configuración">⚙</button>
+				<button class="icon-button" id="pause-button" type="button" aria-label="Pausar partida" title="Pausa">Ⅱ</button>
+			</div>
+		</header>
+
+		<section class="central-panel" aria-label="Centro de juego">
+			<div class="song-list-view" id="song-list-view">
+				<div class="central-heading"><div><p class="level-label"><span class="live-dot"></span> ELIGE TU RITMO</p><h2>Selecciona una canción</h2></div><span class="song-count">06 PISTAS</span></div>
+				<div class="song-list">
+					<article class="song-row song-row-coral"><div class="song-art">☀️</div><div class="song-info"><h3>Solarflex</h3><p>Game Beat <span>·</span> 128 BPM</p></div><button class="song-play-button" type="button" data-song="solarflex-roblox-minecraft-fortnite-video-game-music-491492.mp3" data-bpm="128" data-title="Solarflex" data-artist="Game Beat">Jugar <span>→</span></button></article>
+					<article class="song-row song-row-cyan"><div class="song-art">🌌</div><div class="song-info"><h3>NC Prime</h3><p>Cinematic <span>·</span> 104 BPM</p></div><button class="song-play-button" type="button" data-song="ncprime-noncopyright-music-cinematic-293540.mp3" data-bpm="104" data-title="NC Prime" data-artist="Cinematic">Jugar <span>→</span></button></article>
+					<article class="song-row song-row-violet"><div class="song-art">🌿</div><div class="song-info"><h3>Ambiente</h3><p>Minecraft <span>·</span> 92 BPM</p></div><button class="song-play-button" type="button" data-song="u_wf7ekyr6qb-ambiente-minecraft-455107.mp3" data-bpm="92" data-title="Ambiente" data-artist="Minecraft">Jugar <span>→</span></button></article>
+					<article class="song-row song-row-coral"><div class="song-art">🔥</div><div class="song-info"><h3>Flamewall</h3><p>Camellia <span>·</span> 180 BPM</p></div><button class="song-play-button" type="button" data-song="Camellia - Flamewall.mp3" data-bpm="180" data-title="Flamewall" data-artist="Camellia">Jugar <span>→</span></button></article>
+					<article class="song-row song-row-cyan"><div class="song-art">⚡</div><div class="song-info"><h3>Shiawase (VIP)</h3><p>Dion Timmer <span>·</span> 150 BPM</p></div><button class="song-play-button" type="button" data-song="Dion Timmer - Shiawase (VIP) [Monstercat Release].mp3" data-bpm="150" data-title="Shiawase (VIP)" data-artist="Dion Timmer">Jugar <span>→</span></button></article>
+					<article class="song-row song-row-violet"><div class="song-art">🧚</div><div class="song-info"><h3>Great Fairy Fountain</h3><p>Orchestral Slowed <span>·</span> 120 BPM</p></div><button class="song-play-button" type="button" data-song="Great Fairy Fountain - Orchestral Slowed.mp3" data-bpm="120" data-title="Great Fairy Fountain" data-artist="Orchestral Slowed">Jugar <span>→</span></button></article>
+				</div>
+			</div>
+
+		<section class="game-card is-hidden" id="game-card">
+			<div class="playfield" id="playfield" aria-label="Tablero de juego">
+				<div class="lane lane-1"><span class="key-hint">Z</span></div>
+				<div class="lane lane-2"><span class="key-hint">X</span></div>
+				<div class="lane lane-3"><span class="key-hint">,</span></div>
+				<div class="lane lane-4"><span class="key-hint">.</span></div>
+				<div class="hit-line"></div>
+				<div class="feedback" id="feedback" aria-live="polite"></div>
+				<div class="loading-overlay is-hidden" id="loading-overlay" aria-live="polite">
+					<div class="loading-spinner"></div>
+					<p class="loading-kicker">PREPARANDO PARTIDA</p>
+					<h2 id="loading-title">Cargando canción</h2>
+					<div class="loading-track"><span id="loading-progress"></span></div>
+					<small id="loading-status">Preparando notas e interfaz...</small>
+				</div>
+				<div class="start-overlay" id="start-overlay">
+					<div class="start-emoji">🎶</div>
+					<p>Las notas caen al ritmo</p>
+					<button class="primary-button" id="start-button" type="button">Comenzar <span>→</span></button>
+					<button class="secondary-button" id="back-to-songs-button" type="button">Volver</button>
+					<small>También puedes usar Z X , .</small>
+				</div>
+				<div class="pause-overlay is-hidden" id="pause-overlay">
+					<div class="pause-icon">Ⅱ</div>
+					<h2>En pausa</h2>
+					<button class="primary-button" id="resume-button" type="button">Continuar <span>→</span></button>
+				</div>
+				<div class="gameover-overlay is-hidden" id="gameover-overlay">
+					<div class="gameover-emoji">✨</div>
+					<p class="level-label" id="gameover-label">RITMO INTERRUMPIDO</p>
+					<h2 id="gameover-title">Has fallado</h2>
+					<div class="dashboard game-dashboard result-stats" aria-label="Estadísticas de la partida">
+						<div class="score-block"><span class="eyebrow">Puntuación</span><strong id="score">000000</strong></div>
+						<div class="combo-block"><span class="eyebrow">Combo</span><strong id="combo">x0</strong></div>
+						<div class="best-block"><span class="eyebrow">Récord</span><strong id="best">000000</strong></div>
+						<div class="streak-block"><span class="eyebrow">Racha</span><strong id="streak">0</strong></div>
+						<div class="accuracy-block"><span class="eyebrow">Precisión</span><strong id="accuracy">100%</strong></div>
+						<div class="misses-block"><span class="eyebrow">Fallos</span><strong id="misses">0</strong></div>
+					</div>
+					<button class="primary-button" id="restart-button" type="button">Volver a jugar <span>↻</span></button>
+					<button class="secondary-button" id="gameover-home-button" type="button">Volver al inicio</button>
+				</div>
+			</div>
+			<div class="game-footer"><span><i></i> PRECISIÓN</span><strong>100%</strong><span class="song-status" id="song-status">Selecciona una pista para empezar</span><span class="footer-tip">Z · X · , · .</span></div>
+		</section>
+		</section>
+		<p class="microcopy">Cada nota cuenta. Mantén el ritmo y no mires atrás.</p>
+		</section>
+	</main>
+	<div class="settings-backdrop is-hidden" id="settings-backdrop">
+		<section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+			<div class="settings-header"><div><p class="modal-kicker">AJUSTES DE PARTIDA</p><h2 id="settings-title">Configura tu ritmo</h2></div><button class="close-button" id="close-settings" type="button" aria-label="Cerrar configuración">×</button></div>
+			<label class="range-setting"><span><b>Volumen del juego</b><strong id="volume-value">70%</strong></span><input id="volume-control" type="range" min="0" max="100" value="70"></label>
+			<div class="settings-divider"></div>
+			<label class="range-setting"><span><b>Velocidad de las notas</b><strong id="speed-value">100%</strong></span><input id="speed-control" type="range" min="50" max="150" step="10" value="100"></label>
+			<button class="secondary-button settings-recorder-button" id="open-recorder" type="button">Abrir grabador de chart</button>
+			<button class="primary-button settings-done" id="settings-done" type="button">Listo <span>✓</span></button>
+		</section>
+	</div>
+	<div class="recorder-backdrop is-hidden" id="recorder-backdrop">
+		<section class="recorder-modal" role="dialog" aria-modal="true" aria-labelledby="recorder-title">
+			<div class="settings-header"><div><p class="modal-kicker">EDITOR DE NOTAS</p><h2 id="recorder-title">Graba tu chart</h2></div><button class="close-button" id="close-recorder" type="button" aria-label="Cerrar grabador">×</button></div>
+			<p class="recorder-song" id="recorder-song">Solarflex · 128 BPM</p>
+			<p class="settings-note">Pulsa «Reproducir canción» y presiona Z, X, coma o punto al ritmo de la música. Cada tecla registra una nota.</p>
+			<div class="recorder-actions"><button class="primary-button" id="record-start" type="button">▶ Reproducir canción</button><button class="secondary-button" id="record-stop" type="button" disabled>Detener</button></div>
+			<div class="recording-status" id="recording-status"><span class="recording-dot"></span> Listo para grabar</div>
+			<div class="recorded-notes" id="recorded-notes" aria-live="polite"></div>
+			<textarea class="chart-output" id="chart-output" readonly spellcheck="false" aria-label="Código del chart generado"></textarea>
+			<button class="primary-button settings-done" id="copy-chart" type="button">Copiar código <span>⧉</span></button>
+		</section>
+	</div>
+	<audio id="music" preload="auto"></audio>
+	<script src="app.js"></script>
+</body>
+</html>
